@@ -28,24 +28,28 @@ print(df.head())
 #@st.cache
 st.sidebar.markdown('### Data Filters')
 
-container = st.sidebar.container()
-all = st.sidebar.checkbox("Select all")
+container1 = st.sidebar.container()
+container2 = st.sidebar.container()
 
-if all:
-    position_choice = container.multiselect(
+all_positions = container1.checkbox("Select all positions", 1)
+all_teams = container2.checkbox("Select all teams", 1)
+
+
+if all_positions:
+    position_choice = container1.multiselect(
     'Choose position: ', positions, positions)
 else:
-    position_choice = container.multiselect(
+    position_choice = container1.multiselect(
     'Choose position: ', positions, default=None
-)
+    )
 
-
-if all:
-teams_choice = st.sidebar.multiselect(
-    "Teams: ", teams, default=teams
-)
-
-
+if all_teams:
+    teams_choice = container2.multiselect(
+    "Teams: ", teams, default=teams)
+else:
+    teams_choice = container2.multiselect(
+    "Teams: ", teams, default=None
+    )
 
 price_choice = st.sidebar.slider(
     "max Price: ", min_value=4.0, max_value=15.0, step=.5, value=15.0
