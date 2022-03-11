@@ -8,7 +8,7 @@ import streamlit as st
 pd.set_option('display.max_columns', 5000)
 
 
-df = pd.read_csv('fpldata.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/muumrar/steamlit-projects/main/fcpython/fpldata.csv')
 
 
 df['90s'] = df['minutes']/90
