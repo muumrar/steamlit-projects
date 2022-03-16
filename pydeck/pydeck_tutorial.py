@@ -13,7 +13,7 @@ import requests
     #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
     #columns=['lat', 'lon'])
 
-df = pd.read_csv('nylatlon.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/muumrar/steamlit-projects/main/pydeck/nylatlon.csv')
 
 
 #st.map(df)
