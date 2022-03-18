@@ -21,6 +21,8 @@ df = pd.read_csv('https://raw.githubusercontent.com/muumrar/steamlit-projects/ma
 
 st.title("Rental properties in New York City")
 
+
+
 ## This is the beginning of the pydeck chart
 st. pydeck_chart(pdk.Deck(
      map_style='mapbox://styles/mapbox/satellite-streets-v11', ## map style
@@ -52,6 +54,10 @@ st. pydeck_chart(pdk.Deck(
  )
 )
 
+
+if st.checkbox('Show raw data'):
+    st.subheader('Raw Data')
+    st.write(df)
 #json.dump('http://localhost:8501/')
 #print(df.head())
 
