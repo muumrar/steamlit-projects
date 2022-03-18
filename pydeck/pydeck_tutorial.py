@@ -19,6 +19,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/muumrar/steamlit-projects/ma
 #st.map(df)
 #st.map(df)
 
+st.title("Rental properties in New York City")
 
 ## This is the beginning of the pydeck chart
 st. pydeck_chart(pdk.Deck(
